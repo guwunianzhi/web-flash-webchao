@@ -33,7 +33,9 @@ public class AdvertiseRecord extends BaseEntity implements Serializable {
     @Column
     private Integer status;
     @Column(name = "start_time")
-    private Date startTime;
+    private String startTime;
     @Column(name = "end_time")
-    private Date endTime;
+    private String endTime;
+    @Column(name = "ad_name")
+    private String adName;
 }

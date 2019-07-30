@@ -28,6 +28,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -41,6 +43,14 @@ import java.util.List;
 public class UserController extends BaseController {
     @Autowired
     private UserService userService;
+
+    //TODO 创建
+    @RequestMapping("/getUserList")
+    public Object getUserList() {
+        List<String> strings = Arrays.asList("yu", "ren", "sun");
+        return Rets.success(strings);
+    }
+
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public Object list(@RequestParam(required = false) String account,
                        @RequestParam(required = false) String name){

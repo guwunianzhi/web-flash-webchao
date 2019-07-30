@@ -9,6 +9,8 @@ import java.util.List;
 
 public interface AdvertiseRecordRepository extends BaseRepository<AdvertiseRecord, Long> {
 
-    @Query(nativeQuery = true,value = "select * from t_advertise_record where  client_id = ?")
+    @Query(nativeQuery = true,value = "select * from t_advertise_record where  client_id = ?  AND `status` = 1")
     List<AdvertiseRecord> findByClientId(Long clientId);
+
+
 }
