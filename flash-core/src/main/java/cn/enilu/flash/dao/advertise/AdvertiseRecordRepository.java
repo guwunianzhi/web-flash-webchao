@@ -12,5 +12,4 @@ public interface AdvertiseRecordRepository extends BaseRepository<AdvertiseRecor
     @Query(nativeQuery = true,value = "select * from t_advertise_record where  client_id = ?  AND `status` = 1")
     List<AdvertiseRecord> findByClientId(Long clientId);
 
-
 }
